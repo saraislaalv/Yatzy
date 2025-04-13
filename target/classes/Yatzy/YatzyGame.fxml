@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding ="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="Yatzy.YatzyController">
+
+<top>
+    <HBox spacing="10" fx:id= "topBox" alignment="CENTER">
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10"/>
+        </padding>
+        <Label text="Navn:" />
+        <TextField fx:id="nameField" promptText="Skriv inn navn..." />
+        <Button text="Start spill" onAction="#handleStartGame" />
+    </HBox>
+
+</top>
+
+<left>
+    <VBox spacing="10">
+        <Label text="Poengoversikt" fx:id="points" style="-fx-font-weight: bold;" />
+        <ListView prefWidth="200" fx:id="scoreList"/>
+    </VBox>
+</left>
+
+
+<center>
+    <VBox alignment="CENTER" spacing="10">
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10"/>
+        </padding>
+        
+        <Label fx:id="holdLabel" text="Trykk på terningene du vil holde igjen fra å kaste:"/>
+        <Label fx:id="gameOverLabel" text="Spillet er ferdig!" style="-fx-font-size: 24px; -fx-text-fill: red;" />
+
+
+        <HBox spacing="10" alignment="CENTER">
+            <Button fx:id="dice0" onMouseClicked="#handleToggleDice" />
+            <Button fx:id="dice1" onMouseClicked="#handleToggleDice" />
+            <Button fx:id="dice2" onMouseClicked="#handleToggleDice" />
+            <Button fx:id="dice3" onMouseClicked="#handleToggleDice" />
+            <Button fx:id="dice4" onMouseClicked="#handleToggleDice" />
+
+        </HBox>
+
+        <Label fx:id="rollsLeftLabel" text="Antall kast igjen: 3" />
+        <Button text="Kast" fx:id="rollButton" onAction="#handleRollDice" />
+        <Button fx:id="scoreButton" text="Registrer poeng" onAction="#handleScoreRound" disable="true" />
+    </VBox>
+</center>
+
+<bottom>
+    
+        <HBox spacing="10" alignment="CENTER">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            <Label fx:id="totalScoreLabel" text="Poengsum: 0" />
+            <Label fx:id="highscoreLabel" text="Highscore: " />
+        </HBox>
+
+</bottom>
+
+</BorderPane>
