@@ -1,2 +1,2 @@
-# Prosjekt for TDT4100  V2025
 # Yatzy
+Et program som implementerer detklassiske spillet yatzy for én spiller
